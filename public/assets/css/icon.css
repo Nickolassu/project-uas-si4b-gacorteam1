@@ -1,0 +1,6 @@
+.brand-logo-icon {
+    width: 30px; /* Atur ukuran lebar gambar */
+    height: 30px; /* Atur ukuran tinggi gambar */
+    object-fit: contain; /* Mempertahankan aspek rasio gambar */
+  }
+  
