@@ -25,4 +25,37 @@ class PasienController extends Controller
         // atau
         // return response()->json($response, 200);
     }
+    public function store(Request $request)
+{
+    $validate = $request->validate([
+        'nama' => 'required|unique:pasien',
+        'singkatan' => 'required|max:4'
+    ]);
+
+    $pasien = pasien::create($validate);
+    if($pasien){
+        $response['success'] = true;
+        $response['message'] = 'Pasien berhasil ditambahkan.';
+        return response()->json($response, Response::HTTP_CREATED);
+    }
+}
+public function update(Request $request, $id)
+    {
+    $validate = $request->validate([
+       'nama' => 'required',
+        'kelamin' => 'required',
+        'no_hp' => 'required',
+        'tanggal_lahir' => 'required',
+        'alamat' => 'required',
+        'dokter_id' => 'required',
+        'kunjungan_id' => 'required',
+        'obat_id' => 'required',
+        'harga' => 'required|numeric',
+    ]);
+
+    pasien::where('id', $id)->update($validate);
+    $response['success'] = true;
+    $response['message'] = 'Pasien berhasil diperbarui.';
+    return response()->json($response, Response::HTTP_OK);
+}
 }
