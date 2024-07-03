@@ -260,17 +260,16 @@
                 <span class="menu-title">Dashboard</span>
               </a>
             </li>
-            
+            <li class="nav-item">
+              <a class="nav-link" href="pasien">
+                <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+                <span class="menu-title">Pasien</span>
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="dokter">
                 <span class="icon-bg"><i class="mdi mdi-chart-bar menu-icon"></i></span>
                 <span class="menu-title">Dokter</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="kunjungan">
-                <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
-                <span class="menu-title">Kunjungan</span>
               </a>
             </li>
             <li class="nav-item">
@@ -280,9 +279,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pasien">
+              <a class="nav-link" href="kunjungan">
                 <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
-                <span class="menu-title">Pasien</span>
+                <span class="menu-title">Kunjungan</span>
               </a>
             </li>
         </nav>

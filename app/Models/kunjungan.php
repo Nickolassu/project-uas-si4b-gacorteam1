@@ -9,9 +9,17 @@ class kunjungan extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['tanggal_kunjungan', 'keluhan', 'diagnosa', 'no_urut'];
+    protected $fillable = ['pasien_id','tanggal_kunjungan', 'dokter_id', 'obat_id', 'harga','no_urut'];
 
-    public function pasiens(){
-        return $this->belongsTo(pasien::class, 'kunjungan_id');
+    public function dokter(){
+        return $this->belongsTo(dokter::class, 'dokter_id');
     }
+
+    public function pasien(){
+        return $this->belongsTo(pasien::class, 'pasien_id');
+    }
+
+    public function obat(){
+        return $this->belongsTo(obat::class, 'obat_id');
+}
 }

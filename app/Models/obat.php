@@ -11,6 +11,6 @@ class obat extends Model
     protected $fillable = ['nama_obat', 'deskripsi', 'stok', 'dosis'];
 
     public function pasiens(){
-        return $this->belongsTo(pasien::class, 'obat_id');
+        return $this->belongsTo(kunjungan::class, 'obat_id');
     }
 }

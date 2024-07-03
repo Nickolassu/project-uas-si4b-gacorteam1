@@ -18,18 +18,22 @@
                     <table class="table">
                       <thead>
                         <tr>
+                          <th>Nama Pasien</th>
                           <th>Tanggal Kunjungan</th>
-                          <th>Keluhan</th>
-                          <th>Diagnosa</th>
+                          <th>Dokter</th>
+                          <th>Obat</th>
+                          <th>Harga</th>
                           <th>No Urut</th>
                         </tr>
                       </thead>
                       <tbody>
                         @foreach ($kunjungan as $item)
                         <tr>
+                            <td>{{$item["pasien"]}}</td>
                             <td>{{$item["tanggal_kunjungan"]}}</td>
-                            <td>{{$item["keluhan"]}}</td>
-                            <td>{{$item["diagnosa"]}}</td>
+                            <td>{{$item["dokter"]["nama"]}}</td>
+                            <td>{{$item["obat"]["nama_obat"]}}</td>
+                            <td>{{$item["harga"]}}</td>
                             <td>{{$item["no_urut"]}}</td>
                             <td>
                               @can('delete',$item)

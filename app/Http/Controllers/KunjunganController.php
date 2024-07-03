@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\dokter;
+use App\Models\obat;
+use App\Models\pasien;
 use App\Models\kunjungan;
 use Illuminate\Http\Request;
 
@@ -18,15 +21,20 @@ class KunjunganController extends Controller
 
     public function create()
     {
-        return view('kunjungan.create');
+        $dokter = dokter::all();
+        $pasien = pasien::all();
+        $obat = obat::all();
+        return view('pasien.create', compact('dokter', 'pasien', 'obat'));
     }
 
     public function store(Request $request)
     {
         $val = $request->validate([
+            'pasien_id'=>'required',
             'tanggal_kunjungan' => 'required|date',
-            'keluhan' => 'required',
-            'diagnosa' => 'required',
+            'dokter_id' => 'required',
+            'obat_id' => 'required',
+            'harga' => 'required|numeric',
             'no_urut' => 'required|integer',
         ]);
         kunjungan::create($val);
@@ -56,9 +64,11 @@ public function edit(kunjungan $kunjungan)
 public function update(Request $request, kunjungan $kunjungan)
 {
     $val = $request->validate([
+       'pasien_id'=>'required',
         'tanggal_kunjungan' => 'required|date',
-        'keluhan' => 'required',
-        'diagnosa' => 'required',
+        'dokter_id' => 'required',
+        'obat_id' => 'required',
+        'harga' => 'required|numeric',
         'no_urut' => 'required|integer',
     ]);
     

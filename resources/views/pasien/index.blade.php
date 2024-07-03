@@ -23,10 +23,8 @@
                           <th>No Telephone</th>
                           <th>Tanggal Lahir</th>
                           <th>Alamat</th>
-                          <th>Dokter ID</th>
-                          <th>Kunjungan ID</th>
-                          <th>Obat ID</th>
-                          <th>Harga</th>
+                          <th>Keluhan</th>
+                          <th>Diagnosa</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -37,10 +35,8 @@
                             <td>{{$item["no_hp"]}}</td>
                             <td>{{$item["tanggal_lahir"]}}</td>
                             <td>{{$item["alamat"]}}</td>
-                            <td>{{$item["dokter"]["nama"]}}</td>
-                            <td>{{$item["kunjungan"]["tanggal_kunjungan"]}}</td>
-                            <td>{{$item["obat"]["nama_obat"]}}</td>
-                            <td>{{$item["harga"]}}</td>
+                            <td>{{$item["keluhan"]}}</td>
+                            <td>{{$item["diagnosa"]}}</td>
                             <td>
                               @can('delete',$item)
                               <form action="{{ route('pasien.destroy', $item["id"]) }}" method="post" style="display: inline">

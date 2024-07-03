@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('kunjungans', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('pasien_id')->constrained();
             $table->date('tanggal_kunjungan');
-            $table->text('keluhan');
-            $table->text('diagnosa');
+            $table->unsignedInteger('dokter_id')->constrained();
+            $table->unsignedInteger('obat_id')->constrained();
+            $table->decimal('harga', 8, 2);
             $table->integer('no_urut');
             $table->timestamps();
         });

@@ -12,6 +12,6 @@ class dokter extends Model
     protected $fillable = ['nama', 'no_hp', 'spesialis'];
 
     public function pasiens(){
-        return $this->belongsTo(pasien::class, 'dokter_id');
+        return $this->belongsTo(kunjungan::class, 'dokter_id');
     }
 }

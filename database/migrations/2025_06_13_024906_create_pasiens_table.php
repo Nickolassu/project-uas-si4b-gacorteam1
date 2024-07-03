@@ -18,10 +18,8 @@ return new class extends Migration
                 $table->string('no_hp');
                 $table->date('tanggal_lahir');
                 $table->string('alamat');
-                $table->foreignId('dokter_id')->constrained('dokters')->onDelete('cascade');
-                $table->foreignId('kunjungan_id')->constrained('kunjungans')->onDelete('cascade');
-                $table->foreignId('obat_id')->constrained('obats')->onDelete('cascade');
-                $table->decimal('harga', 8, 2);
+                $table->text('keluhan');
+                $table->text('diagnosa');
                 $table->timestamps();
             });
     }
