@@ -11,7 +11,7 @@
                   <p class="card-description">
                     List data pasien
                   </p>
-                  @can('create',App\pasien::class)
+                 @can('pasien',App\pasien::class)
                   <a href="{{ route('pasien.create')}}" class="btn btn-primary">tambah</a>
                   @endcan
                   <div class="table-responsive">
@@ -46,12 +46,13 @@
                               </form>
                               @endcan
                             </td>
+                            @can('update',$item)
                             <td>
-                              @can('update',$item)
+
                               <a href="{{ route('pasien.edit', $item["id"])}}"
                                 class="btn btn-sm btn-rounded btn-warning">Edit</a>
-                                @endcan
                               </td>
+                              @endcan
                             </tr>
                         @endforeach
                       </tbody>

@@ -19,10 +19,7 @@ class PasienController extends Controller
 
     public function create()
     {
-        $dokter = dokter::all();
-        $kunjungan = kunjungan::all();
-        $obat = obat::all();
-        return view('pasien.create', compact('dokter', 'kunjungan', 'obat'));
+        return view('pasien.create');
     }
 
     public function store(Request $request)
@@ -58,6 +55,7 @@ public function edit(pasien $pasien)
     ->with('pasien',$pasien);
 }
 
+
 /**
  * Update the specified resource in storage.
  */
@@ -75,6 +73,7 @@ public function update(Request $request, pasien $pasien)
     pasien::where('id', $pasien['id'])->update($val);
     return redirect()->route('pasien.index')->with('Success', $val['nama'] . ' berhasil disimpan');
 }
+
 
 /**
  * Remove the specified resource from storage.

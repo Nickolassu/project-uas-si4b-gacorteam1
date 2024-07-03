@@ -10,7 +10,7 @@
                   <h4 class="card-title">Tambah Pasien</h4>
                   <p class="card-description">
                     Data Tambah Pasien
-                  <form method="POST"action="{{route('pasien.update'), $pasien["id"]}}" class="forms-sample">
+                  <form method="POST"action="{{route('pasien.update', $pasien["id"])}}" class="forms-sample">
                     @csrf
                     <div class="form-group">
                       <label for="nama">Nama Pasien</label>

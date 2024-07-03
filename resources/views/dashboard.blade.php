@@ -91,13 +91,13 @@
             },
             xAxis: {
                 categories: [
-                    @foreach($pasienobat as $item)
+                    @foreach($kunjunganobat as $item)
                         '{{ $item->nama_obat }}',
                     @endforeach
                 ],
                 crosshair: true,
                 accessibility: {
-                    description: 'Program Studi'
+                    description: 'Pasien'
                 }
             },
             yAxis: {
@@ -119,7 +119,7 @@
                 {
                     name: 'Pasien',
                     data: [
-                        @foreach($pasienobat as $item)
+                        @foreach($kunjunganobat as $item)
                             {{ $item->jumlah }},
                         @endforeach
                     ]
