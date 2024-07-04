@@ -11,6 +11,7 @@
                   <p class="card-description">
                     Data Tambah Pasien
                   <form method="POST"action="{{route('pasien.update', $pasien["id"])}}" class="forms-sample">
+                    @method('Put')
                     @csrf
                     <div class="form-group">
                       <label for="nama">Nama Pasien</label>
@@ -53,7 +54,7 @@
                             <label for="diagnosa">Diagnosis</label>
                             <input type="text" class="form-control" name="diagnosa" value="{{old('diagnosa')}}">
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                    <a href="{{ url('dokter')}}" class="btn btn-light">Batal</button>
+                    <a href="{{ url('pasien')}}" class="btn btn-light">Batal</button>
                   </form>
                 </div>
               </div>

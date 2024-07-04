@@ -48,11 +48,10 @@
                             </td>
                             @can('update',$item)
                             <td>
-
                               <a href="{{ route('pasien.edit', $item["id"])}}"
                                 class="btn btn-sm btn-rounded btn-warning">Edit</a>
                               </td>
-                              @endcan
+                            @endcan
                             </tr>
                         @endforeach
                       </tbody>

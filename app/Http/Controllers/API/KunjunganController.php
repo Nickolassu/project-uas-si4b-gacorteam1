@@ -31,8 +31,10 @@ class KunjunganController extends Controller
     public function store(Request $request)
 {
     $validate = $request->validate([
-        'nama' => 'required|unique:kunjungan',
-        'singkatan' => 'required|max:4'
+        'tanggal_kunjungan' => 'required|date',
+        'keluhan' => 'required',
+        'diagnosa' => 'required',
+        'no_urut' => 'required|integer',
     ]);
 
     $kunjungan = kunjungan::create($validate);

@@ -28,8 +28,10 @@ class ObatController extends Controller
     public function store(Request $request)
 {
     $validate = $request->validate([
-        'nama' => 'required|unique:obat',
-        'singkatan' => 'required|max:4'
+        'nama_obat' => 'required',
+        'deskripsi' => 'required',
+        'stok' => 'required|integer',
+        'dosis' => 'required',
     ]);
 
     $obat = obat::create($validate);

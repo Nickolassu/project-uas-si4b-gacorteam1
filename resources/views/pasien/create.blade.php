@@ -52,9 +52,9 @@
                         <div class="form-group">
                             <label for="diagnosa">Diagnosis</label>
                             <input type="text" class="form-control" name="diagnosa" value="{{old('diagnosa')}}">
-                            
+                        </div>
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                    <a href="{{ url('dokter')}}" class="btn btn-light">Batal</button>
+                    <a href="{{ url('pasien')}}" class="btn btn-light">Batal</button>
                   </form>
                 </div>
               </div>

@@ -11,7 +11,7 @@
                   <p class="card-description">
                     List data obat
                   </p>
-                  @can('create',App\Obat::class)
+                  @can('create',App\obat::class)
                     <a href="{{ route('obat.create')}}" class="btn btn-primary">tambah</a>
                   @endcan
                   <div class="table-responsive">

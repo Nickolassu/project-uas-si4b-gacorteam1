@@ -30,8 +30,9 @@ class DokterController extends Controller
     public function store(Request $request)
     {
     $validate = $request->validate([
-        'nama' => 'required|unique:dokter',
-        'singkatan' => 'required|max:4'
+        'nama' => 'required',
+        'no_hp' => 'required',
+        'spesialis' => 'required',
     ]);
 
     $dokter = dokter::create($validate);
