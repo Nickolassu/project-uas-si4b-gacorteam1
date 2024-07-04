@@ -30,7 +30,6 @@
                             Perempuan
                         </label>
                     </div>
-                </div>
                     </div>
                     <div class="form-group">
                         <label for="no_hp">No Telephone Pasien</label>
