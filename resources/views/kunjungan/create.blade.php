@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-6 grid-margin stretch-card">
+    <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Kunjuungan</h4>
@@ -27,6 +27,7 @@
                       <label for="tanggal_kunjungan">Tanggal Kunjungan</label>
                       <input type="date" class="form-control" name="tanggal_kunjungan" value="{{old('tanggal_kunjungan')}}">
                     </div>
+                    <div class="form-group">
                     <label for="dokter_id">Dokter</label>
                         <select name="dokter_id"
                         class="form-control">
@@ -49,22 +50,18 @@
                         </select>
                       </div>
                       <div class="form-group">
-                        <label for="no_urut">No Urut Pasien</label>
-                        <input type="text" class="form-control" name="no_urut" value="{{old('no_urut')}}">
-                      </div>
-                      <div class="form-group">
                         <label for="harga">Harga</label>
                         <input type="number" class="form-control" name="harga" value="{{old('harga')}}">
                       </div>
                       <div class="form-group">
                         <label for="no_urut">Nomor Urut</label>
-                        <input type="number" class="form-control" name="harga" value="{{old('no_urut')}}">
+                        <input type="number" class="form-control" name="no_urut" value="{{old('no_urut')}}">
                       </div>
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                    <a href="{{ url('dokter')}}" class="btn btn-light">Batal</button>
+                    <a href="{{ url('kunjungan')}}" class="btn btn-light">Batal</button>
                   </form>
                 </div>
               </div>
             </div>
-</div>
+          </div>
 @endsection

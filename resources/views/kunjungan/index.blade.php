@@ -29,7 +29,7 @@
                       <tbody>
                         @foreach ($kunjungan as $item)
                         <tr>
-                            <td>{{$item["pasien"]}}</td>
+                            <td>{{$item["pasien"]["nama"]}}</td>
                             <td>{{$item["tanggal_kunjungan"]}}</td>
                             <td>{{$item["dokter"]["nama"]}}</td>
                             <td>{{$item["obat"]["nama_obat"]}}</td>

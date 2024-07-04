@@ -255,31 +255,31 @@
           <ul class="nav">
             <li class="nav-item nav-category">Main</li>
             <li class="nav-item">
-              <a class="nav-link" href="dashboard">
+              <a class="nav-link" href="{{url('dashboard')}}">
                 <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
                 <span class="menu-title">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pasien">
+              <a class="nav-link" href="{{url("pasien")}}">
                 <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
                 <span class="menu-title">Pasien</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="dokter">
+              <a class="nav-link" href="{{url('dokter')}}">
                 <span class="icon-bg"><i class="mdi mdi-chart-bar menu-icon"></i></span>
                 <span class="menu-title">Dokter</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="obat">
+              <a class="nav-link" href="{{url('obat')}}">
                 <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
                 <span class="menu-title">Obat</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="kunjungan">
+              <a class="nav-link" href="{{url('kunjungan')}}">
                 <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
                 <span class="menu-title">Kunjungan</span>
               </a>

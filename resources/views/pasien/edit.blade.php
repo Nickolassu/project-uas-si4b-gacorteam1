@@ -4,12 +4,12 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-6 grid-margin stretch-card">
+    <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Pasien</h4>
                   <p class="card-description">
-                    Data Tambah Pasien
+                    Ubah Data Pasien
                   <form method="POST"action="{{route('pasien.update', $pasien["id"])}}" class="forms-sample">
                     @method('Put')
                     @csrf

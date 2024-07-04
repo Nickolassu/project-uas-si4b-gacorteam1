@@ -24,7 +24,7 @@ class KunjunganController extends Controller
         $dokter = dokter::all();
         $pasien = pasien::all();
         $obat = obat::all();
-        return view('pasien.create', compact('dokter', 'pasien', 'obat'));
+        return view('kunjungan.create', compact('dokter', 'pasien', 'obat'));
     }
 
     public function store(Request $request)
@@ -38,7 +38,7 @@ class KunjunganController extends Controller
             'no_urut' => 'required|integer',
         ]);
         kunjungan::create($val);
-        return redirect()->route('kunjungan.index')->with('success', $val['no_urut'] . ' berhasil disimpan');
+        return redirect()->route('kunjungan.index')->with('success', $val['tanggal_kunjungan'] . ' berhasil disimpan');
     }
 /**
  * Display the specified resource.
@@ -64,7 +64,7 @@ public function edit(kunjungan $kunjungan)
 public function update(Request $request, kunjungan $kunjungan)
 {
     $val = $request->validate([
-       'pasien_id'=>'required',
+        'pasien_id'=>'required',
         'tanggal_kunjungan' => 'required|date',
         'dokter_id' => 'required',
         'obat_id' => 'required',

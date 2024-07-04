@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-6 grid-margin stretch-card">
+    <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Ubah Kunjungan</h4>
@@ -29,6 +29,7 @@
                       <label for="tanggal_kunjungan">Tanggal Kunjungan</label>
                       <input type="date" class="form-control" name="tanggal_kunjungan" value="{{old('tanggal_kunjungan')}}">
                     </div>
+
                     <label for="dokter_id">Dokter_Id</label>
                         <select name="dokter_id"
                         class="form-control">

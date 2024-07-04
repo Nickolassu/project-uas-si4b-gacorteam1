@@ -12,9 +12,14 @@ class DokterController extends Controller
     //     abort(403);
     public function index()
     {
-        $dokter=dokter::all();
+        if(auth()->user()->role == 'D'){
+            $dokter = dokter::where('user_id',auth()->user()->id)->get();
+
+        } else {
+            $dokter = dokter::all();
+        }
         return view('dokter.index')
-            ->with('dokter',$dokter);
+        ->with('dokter',$dokter);
     }
 
     public function create()
@@ -24,6 +29,9 @@ class DokterController extends Controller
 
     public function store(Request $request)
     {
+        if($request->user()->cannot('create',dokter::class)){
+            abort(403);
+
         $val = $request->validate([
             'nama' => 'required',
             'no_hp' => 'required',
@@ -32,7 +40,7 @@ class DokterController extends Controller
         dokter::create($val);
         return redirect()->route('dokter.index')->with('success', $val['nama'] . ' berhasil disimpan');
     }
-
+    }
 /**
  * Display the specified resource.
  */

@@ -117,7 +117,7 @@
             },
             series: [
                 {
-                    name: 'Pasien',
+                    name: 'kunjungan',
                     data: [
                         @foreach($kunjunganobat as $item)
                             {{ $item->jumlah }},

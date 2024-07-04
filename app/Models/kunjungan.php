@@ -21,5 +21,5 @@ class kunjungan extends Model
 
     public function obat(){
         return $this->belongsTo(obat::class, 'obat_id');
-}
+    }
 }

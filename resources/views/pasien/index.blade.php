@@ -11,7 +11,7 @@
                   <p class="card-description">
                     List data pasien
                   </p>
-                 @can('pasien',App\pasien::class)
+                 @can('create',App\pasien::class)
                   <a href="{{ route('pasien.create')}}" class="btn btn-primary">tambah</a>
                   @endcan
                   <div class="table-responsive">
