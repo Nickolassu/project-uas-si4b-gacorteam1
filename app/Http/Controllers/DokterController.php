@@ -31,7 +31,7 @@ class DokterController extends Controller
     {
         if($request->user()->cannot('create',dokter::class)){
             abort(403);
-
+        }
         $val = $request->validate([
             'nama' => 'required',
             'no_hp' => 'required',
@@ -40,7 +40,7 @@ class DokterController extends Controller
         dokter::create($val);
         return redirect()->route('dokter.index')->with('success', $val['nama'] . ' berhasil disimpan');
     }
-    }
+    
 /**
  * Display the specified resource.
  */
