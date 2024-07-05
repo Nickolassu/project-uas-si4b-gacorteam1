@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Validation\Rules\Unique;
 
 return new class extends Migration
 {
@@ -14,12 +15,12 @@ return new class extends Migration
         Schema::create('pasiens', function (Blueprint $table) {
                 $table->id();
                 $table->string('nama');
+                $table->foreignId('dokter_id')->constrained();
                 $table->enum('kelamin', ['Laki-laki', 'Perempuan']);
                 $table->string('no_hp');
                 $table->date('tanggal_lahir');
                 $table->string('alamat');
                 $table->text('keluhan');
-                $table->text('diagnosa');
                 $table->timestamps();
             });
     }

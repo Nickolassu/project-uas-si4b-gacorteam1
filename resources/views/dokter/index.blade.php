@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-lg-6 grid-margin stretch-card">
+    <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Dokter</h4>
@@ -21,6 +21,7 @@
                           <th>Nama Dokter</th>
                           <th>No Telephone</th>
                           <th>Spesialis</th>
+                          <th>jadwal</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -29,6 +30,7 @@
                             <td>{{$item["nama"]}}</td>
                             <td>{{$item["no_hp"]}}</td>
                             <td>{{$item["spesialis"]}}</td>
+                            <td>{{$item["jadwal"]}}</td>
                             <td>
                               @can('delete',$item)
                               <form action="{{ route('dokter.destroy', $item["id"]) }}" method="post" style="display: inline">

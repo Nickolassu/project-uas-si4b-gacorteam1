@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama',45);
             $table->string('no_hp',255);
             $table->string('spesialis',25);
+            $table->date('jadwal');
             $table->timestamps();
         });
     }

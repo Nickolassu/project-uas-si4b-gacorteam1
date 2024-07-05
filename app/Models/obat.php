@@ -9,8 +9,4 @@ class obat extends Model
 {
     use HasFactory;
     protected $fillable = ['nama_obat', 'deskripsi', 'stok', 'dosis'];
-
-    public function pasiens(){
-        return $this->belongsTo(kunjungan::class, 'obat_id');
-    }
 }

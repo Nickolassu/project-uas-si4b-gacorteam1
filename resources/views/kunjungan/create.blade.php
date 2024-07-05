@@ -7,7 +7,7 @@
     <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Kunjuungan</h4>
+                  <h4 class="card-title">tambah Kunjungan</h4>
                   <p class="card-description">
                     Data Kunjungan
                   <form method="POST"action="{{route('kunjungan.store')}}" class="forms-sample">
@@ -36,7 +36,7 @@
                                       {{ $item['nama']}}
                                   </option>
                               @endforeach
-                        </select>
+                        </select> 
                       </div>
                       <div class="form-group">
                         <label for="obat_id">Obat</label>
@@ -52,6 +52,10 @@
                       <div class="form-group">
                         <label for="harga">Harga</label>
                         <input type="number" class="form-control" name="harga" value="{{old('harga')}}">
+                      </div>
+                      <div class="form-group">
+                        <label for="diagnosa">Diagnosa</label>
+                        <input type="text" class="form-control" name="diagnosa" value="{{old('diagnosa')}}">
                       </div>
                       <div class="form-group">
                         <label for="no_urut">Nomor Urut</label>

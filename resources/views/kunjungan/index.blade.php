@@ -23,6 +23,7 @@
                           <th>Dokter</th>
                           <th>Obat</th>
                           <th>Harga</th>
+                          <th>diagnosa</th>
                           <th>No Urut</th>
                         </tr>
                       </thead>
@@ -34,6 +35,7 @@
                             <td>{{$item["dokter"]["nama"]}}</td>
                             <td>{{$item["obat"]["nama_obat"]}}</td>
                             <td>{{$item["harga"]}}</td>
+                            <td>{{$item["diagnosa"]}}</td>
                             <td>{{$item["no_urut"]}}</td>
                             <td>
                               @can('delete',$item)

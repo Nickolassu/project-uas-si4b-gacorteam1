@@ -33,9 +33,11 @@ class DokterController extends Controller
             abort(403);
         }
         $val = $request->validate([
+        
             'nama' => 'required',
             'no_hp' => 'required',
             'spesialis' => 'required',
+            'jadwal' => 'required',
         ]);
         dokter::create($val);
         return redirect()->route('dokter.index')->with('success', $val['nama'] . ' berhasil disimpan');
@@ -68,11 +70,11 @@ public function update(Request $request, dokter $dokter)
         'nama' => 'required',
         'no_hp' => 'required',
         'spesialis' => 'required',
+        'jadwal' => 'required',
     ]);
 
     
     dokter::where('id', $dokter['id'])->update($val);
-    
     return redirect()->route('dokter.index')->with('Success', $val['nama'] . ' berhasil disimpan');
 }
 

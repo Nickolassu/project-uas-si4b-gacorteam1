@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('obat_id')->constrained();
             $table->decimal('harga', 8, 2);
             $table->integer('no_urut');
+            $table->text('diagnosa');
             $table->timestamps();
         });
     }

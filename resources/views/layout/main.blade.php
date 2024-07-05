@@ -38,7 +38,7 @@
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-menu"></span>
           </button>
-          <div class="search-field d-none d-xl-block">
+          {{-- <div class="search-field d-none d-xl-block">
             <form class="d-flex align-items-center h-100" action="#">
               <div class="input-group">
                 <div class="input-group-prepend bg-transparent">
@@ -47,10 +47,9 @@
                 <input type="text" class="form-control bg-transparent border-0" placeholder="Search products">
               </div>
             </form>
-          </div>
+          </div> --}}
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item  dropdown d-none d-md-block">
-              <a class="nav-link dropdown-toggle" id="reportDropdown" href="#" data-toggle="dropdown" aria-expanded="false"> Reports </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="reportDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="mdi mdi-file-pdf mr-2"></i>PDF </a>
@@ -63,7 +62,6 @@
               </div>
             </li>
             <li class="nav-item  dropdown d-none d-md-block">
-              <a class="nav-link dropdown-toggle" id="projectDropdown" href="#" data-toggle="dropdown" aria-expanded="false"> Projects </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="projectDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="mdi mdi-eye-outline mr-2"></i>View Project </a>
@@ -72,7 +70,7 @@
                   <i class="mdi mdi-pencil-outline mr-2"></i>Edit Project </a>
               </div>
             </li>
-            <li class="nav-item nav-language dropdown d-none d-md-block">
+            {{-- <li class="nav-item nav-language dropdown d-none d-md-block">
               <a class="nav-link dropdown-toggle" id="languageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div class="nav-language-icon">
                   <i class="flag-icon flag-icon-us" title="us" id="us"></i>
@@ -80,7 +78,7 @@
                 <div class="nav-language-text">
                   <p class="mb-1 text-black">English</p>
                 </div>
-              </a>
+              </a> --}}
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="languageDropdown">
                 <a class="dropdown-item" href="#">
                   <div class="nav-language-icon mr-2">
@@ -154,7 +152,7 @@
                 </div>
               </div>
             </li>
-            <li class="nav-item dropdown">
+            {{-- <li class="nav-item dropdown">
               <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <i class="mdi mdi-email-outline"></i>
                 <span class="count-symbol bg-success"></span>
@@ -194,8 +192,8 @@
                 <div class="dropdown-divider"></div>
                 <h6 class="p-3 mb-0 text-center">4 new messages</h6>
               </div>
-            </li>
-            <li class="nav-item dropdown">
+            </li> --}}
+            {{-- <li class="nav-item dropdown">
               <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                 <i class="mdi mdi-bell-outline"></i>
                 <span class="count-symbol bg-danger"></span>
@@ -241,7 +239,7 @@
                 <div class="dropdown-divider"></div>
                 <h6 class="p-3 mb-0 text-center">See all notifications</h6>
               </div>
-            </li>
+            </li> --}}
           </ul>
           <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
             <span class="mdi mdi-menu"></span>
@@ -260,16 +258,17 @@
                 <span class="menu-title">Dashboard</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url("pasien")}}">
-                <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
-                <span class="menu-title">Pasien</span>
-              </a>
-            </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="{{url('dokter')}}">
                 <span class="icon-bg"><i class="mdi mdi-chart-bar menu-icon"></i></span>
                 <span class="menu-title">Dokter</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url("pasien")}}">
+                <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+                <span class="menu-title">Pasien</span>
               </a>
             </li>
             <li class="nav-item">

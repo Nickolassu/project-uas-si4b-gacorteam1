@@ -28,6 +28,10 @@
               <label for="spesialis">Specialis Dokter</label>
               <input type="text" class="form-control" name="spesialis" value="{{old('spesialis')}}" placeholder="specialis saraf, specialis bedah, ....">
             </div>
+            <div class="form-group">
+              <label for="jadwal">Jadwal Dokter</label>
+              <input type="date" class="form-control" name="jadwal" value="{{old('jadwal')}}">
+            </div>
               <button type="submit" class="btn btn-primary mr-2">Simpan</button>
               <a href="{{url('dokter')}}" class="btn btn-light">Batal</button>
           </form>

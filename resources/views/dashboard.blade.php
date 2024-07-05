@@ -15,11 +15,7 @@
             <figure class="highcharts-figure">
                 <div id="container"></div>
                 <p class="highcharts-description">
-                    A basic column chart comparing estimated corn and wheat production
-                    in some countries.
- 
-                    The chart is making use of the axis crosshair feature, to highlight
-                    the hovered country.
+                   Grafik stok obat.
                 </p>
             </figure>
  
@@ -81,7 +77,7 @@
                 type: 'column'
             },
             title: {
-                text: 'Grafik Pasien berdasarkan obat diambil',
+                text: 'Grafik Stok Obat',
                 align: 'center'
             },
             subtitle: {
@@ -91,23 +87,23 @@
             },
             xAxis: {
                 categories: [
-                    @foreach($kunjunganobat as $item)
+                    @foreach($data as $item)
                         '{{ $item->nama_obat }}',
                     @endforeach
                 ],
                 crosshair: true,
                 accessibility: {
-                    description: 'Pasien'
+                    description: 'Nama obat'
                 }
             },
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Jumlah (orang)'
+                    text: 'Stok Obat'
                 }
             },
             tooltip: {
-                valueSuffix: ' (1000 MT)'
+                valueSuffix:  'units'
             },
             plotOptions: {
                 column: {
@@ -117,10 +113,10 @@
             },
             series: [
                 {
-                    name: 'Pasien',
+                    name: 'stok',
                     data: [
-                        @foreach($kunjunganobat as $item)
-                            {{ $item->jumlah }},
+                        @foreach($data as $item)
+                            {{ $item->stok }},
                         @endforeach
                     ]
                 }

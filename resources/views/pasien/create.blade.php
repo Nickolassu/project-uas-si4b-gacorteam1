@@ -13,9 +13,20 @@
                   <form method="POST"action="{{route('pasien.store')}}" class="forms-sample">
                     @csrf
                     <div class="form-group">
-                      <label for="nama">Nama Pasien</label>
-                      <input type="text" class="form-control" name="nama" value="{{old('nama')}}">
+                        <label for="nama">Nama Pasien</label>
+                        <input type="text" class="form-control" name="nama" value="{{old('nama')}}">
                     </div>
+                    <div class="form-group">
+                      <label for="dokter_id">Dokter</label>
+                          <select name="dokter_id"
+                          class="form-control">
+                                @foreach($dokter as $item)
+                                    <option value="{{ $item['id']}}">
+                                        {{ $item['nama']}}
+                                    </option>
+                                @endforeach
+                          </select>
+                        </div>
                     <div class="form-group">
                       <label for="kelamin">Jenis Kelamin</label>
                       <div class="form-check">
@@ -48,10 +59,7 @@
                           <label for="keluhan">Keluhan Pasien</label>
                           <input type="text" class="form-control" name="keluhan" value="{{old('keluhan')}}">
                         </div>
-                        <div class="form-group">
-                            <label for="diagnosa">Diagnosis</label>
-                            <input type="text" class="form-control" name="diagnosa" value="{{old('diagnosa')}}">
-                        </div>
+                        
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                     <a href="{{ url('pasien')}}" class="btn btn-light">Batal</button>
                   </form>

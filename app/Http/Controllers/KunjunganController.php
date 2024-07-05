@@ -35,6 +35,7 @@ class KunjunganController extends Controller
             'dokter_id' => 'required',
             'obat_id' => 'required',
             'harga' => 'required|numeric',
+            'diagnosa' => 'required',
             'no_urut' => 'required|integer',
         ]);
         kunjungan::create($val);
@@ -53,9 +54,11 @@ class KunjunganController extends Controller
  */
 public function edit(kunjungan $kunjungan)
 {
-    // $kunjungan=kunjungan::all();
-    return view('kunjungan.edit')
-    ->with('kunjungan',$kunjungan);
+    //$kunjungan=kunjungan::all();
+    $dokter = dokter::all();
+    $pasien = pasien::all();
+    $obat = obat::all();
+    return view('kunjungan.edit', compact('kunjungan','dokter', 'pasien', 'obat'));
 }
 
 /**
@@ -69,9 +72,9 @@ public function update(Request $request, kunjungan $kunjungan)
         'dokter_id' => 'required',
         'obat_id' => 'required',
         'harga' => 'required|numeric',
+        'diagnosa' => 'required',
         'no_urut' => 'required|integer',
     ]);
-    
     kunjungan::where('id', $kunjungan['id'])->update($val);
     return redirect()->route('kunjungan.index')->with('Success', $val['tanggal_kunjungan'] . ' berhasil disimpan');
 }

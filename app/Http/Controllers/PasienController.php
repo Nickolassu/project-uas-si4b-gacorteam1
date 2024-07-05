@@ -19,19 +19,20 @@ class PasienController extends Controller
 
     public function create()
     {
-        return view('pasien.create');
+        $dokter = dokter::all();
+        return view('pasien.create')->with('dokter', $dokter);
     }
 
     public function store(Request $request)
     {
         $val = $request->validate([
-            'nama' => 'required',
+            'nama' => 'required ',
+            'dokter_id'=>'required',
             'kelamin' => 'required',
             'no_hp' => 'required',
             'tanggal_lahir' => 'required',
             'alamat' => 'required',
             'keluhan' => 'required',
-            'diagnosa' => 'required',
         ]);
         pasien::create($val);
         return redirect()->route('pasien.index')->with('success', $val['nama'] . ' berhasil disimpan');
@@ -51,8 +52,10 @@ class PasienController extends Controller
 public function edit(pasien $pasien)
 {
     // $pasien=pasien::all();
+    $dokter = dokter::all();
     return view('pasien.edit')
-    ->with('pasien',$pasien);
+    ->with('pasien',$pasien)
+    ->with('dokter',$dokter);
 }
 
 
@@ -63,12 +66,12 @@ public function update(Request $request, pasien $pasien)
 {
     $val = $request->validate([
         'nama' => 'required',
+        'dokter_id'=>'required',
         'kelamin' => 'required',
         'no_hp' => 'required',
         'tanggal_lahir' => 'required',
         'alamat' => 'required',
         'keluhan' => 'required',
-        'diagnosa' => 'required',
     ]);
     pasien::where('id', $pasien['id'])->update($val);
     return redirect()->route('pasien.index')->with('Success', $val['nama'] . ' berhasil disimpan');
