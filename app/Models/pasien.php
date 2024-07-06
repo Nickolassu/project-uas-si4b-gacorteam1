@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class pasien extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama','dokter_id', 'kelamin', 'no_hp', 'tanggal_lahir', 'alamat', 'keluhan'];
+    protected $fillable = ['nama_pasien','kelamin', 'no_hp', 'tanggal_lahir', 'tempat_lahir', 'alamat'];
 
     public function dokter(){
         return $this->belongsTo(dokter::class, 'dokter_id');

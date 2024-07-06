@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row">
-  <div class="col-md-12 grid-margin stretch-card">
+  <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">tambah Dokter</h4>
@@ -29,7 +29,7 @@
               <input type="number" class="form-control" name="harga" value="{{old('harga')}}" placeholder="harga saraf, specialis bedah, ....">
             </div>
               <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-              <a href="{{url('dokter')}}" class="btn btn-light">Batal</button>
+              <a href="{{ url('dokter.index') }}" class="btn btn-light">Batal</a>
           </form>
         </div>
     </div>

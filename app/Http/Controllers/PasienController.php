@@ -26,13 +26,13 @@ class PasienController extends Controller
     public function store(Request $request)
     {
         $val = $request->validate([
-            'nama' => 'required ',
-            'dokter_id'=>'required',
-            'kelamin' => 'required',
+            'nama_pasien' => 'required ',
+            'kelamin'=>'required',
             'no_hp' => 'required',
             'tanggal_lahir' => 'required',
+            'tempat_lahir' => 'required',
             'alamat' => 'required',
-            'keluhan' => 'required',
+            
         ]);
         pasien::create($val);
         return redirect()->route('pasien.index')->with('success', $val['nama'] . ' berhasil disimpan');

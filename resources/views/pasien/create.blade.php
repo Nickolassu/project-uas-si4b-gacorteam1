@@ -15,16 +15,12 @@
                     <div class="form-group">
                         <label for="nama">Nama Pasien</label>
                         <input type="text" class="form-control" name="nama" value="{{old('nama')}}">
-                    </div>
-                    <div class="form-group">
-                      <label for="dokter_id">Dokter</label>
-                          <select name="dokter_id"
-                          class="form-control">
+                          {{-- class="form-control">
                                 @foreach($dokter as $item)
                                     <option value="{{ $item['id']}}">
                                         {{ $item['nama']}}
                                     </option>
-                                @endforeach
+                                @endforeach --}}
                           </select>
                         </div>
                     <div class="form-group">
@@ -43,7 +39,7 @@
                     </div>
                     </div>
                     <div class="form-group">
-                        <label for="no_hp">No Telephone Pasien</label>
+                        <label for="no_hp">NoTelepon</label>
                         <input type="text" class="form-control" name="no_hp" value="{{old('no_hp')}}">
                       </div>
                       <div class="form-group">
@@ -51,7 +47,7 @@
                         <input type="date" class="form-control" name="tanggal_lahir" value="{{old('tanggal_lahir')}}">
                       </div>
                       <div class="form-group">
-                        <label for="alamat">Alamat Pasien</label>
+                        <label for="alamat">Alamat </label>
                         <input type="text" class="form-control" name="alamat" value="{{old('alamat')}}">
                       </div>    
                       <div class="form-group">

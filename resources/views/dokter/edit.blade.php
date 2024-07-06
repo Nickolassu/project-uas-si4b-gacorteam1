@@ -29,7 +29,7 @@
                         <input type="number" class="form-control" name="harga" value="{{old('harga') ? old('harga') : $dokter['harga']}}">
                       </div>
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                    <a href="{{ url('dokter')}}" class="btn btn-light">Batal</button>
+                    <a href="{{ route('dokter') }}" class="btn btn-light">Batal</button>
                   </form>
                 </div>
               </div>

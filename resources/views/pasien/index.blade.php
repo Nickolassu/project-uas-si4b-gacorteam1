@@ -19,24 +19,23 @@
                       <thead>
                         <tr>
                           <th>Nama Pasien</th>
-                          <th>Dokter</th>
                           <th>Kelamin</th>
-                          <th>No Telephone</th>
+                          <th>Nomor telepon</th>
                           <th>Tanggal Lahir</th>
                           <th>Alamat</th>
                           <th>Keluhan</th>
+                          <th>Tempat Lahir</th>
                         </tr>
                       </thead>
                       <tbody>
                         @foreach ($pasien as $item)
                         <tr>
-                            <td>{{$item["nama"]}}</td>
-                            <td>{{$item["dokter"]["nama"]}}</td>
-                            <td>{{$item["kelamin"]}}</td>
+                            <td>{{$item["nama_pasien"]}}</td>
+                            <td>{{$item["kelamin"]["nama"]}}</td>
                             <td>{{$item["no_hp"]}}</td>
                             <td>{{$item["tanggal_lahir"]}}</td>
+                            <td>{{$item["tempat_lahir"]}}</td>
                             <td>{{$item["alamat"]}}</td>
-                            <td>{{$item["keluhan"]}}</td>
                             <td>
                               @can('delete',$item)
                               <form action="{{ route('pasien.destroy', $item["id"]) }}" method="post" style="display: inline">

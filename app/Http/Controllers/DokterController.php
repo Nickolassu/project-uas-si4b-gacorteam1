@@ -36,9 +36,7 @@ class DokterController extends Controller
         
             'nama' => 'required',
             'user_id'  => 'required',
-            'no_hp' => 'required',
             'spesialis' => 'required',
-            'jadwal' => 'required',
             'harga'  => 'required|numeric',
         ]);
         dokter::create($val);
