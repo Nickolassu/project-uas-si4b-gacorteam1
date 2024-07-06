@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('dokters', function (Blueprint $table) {
             $table->id();
-            $table->string('nama',45);
-            $table->string('no_hp',255);
-            $table->string('spesialis',25);
-            $table->date('jadwal');
+            $table->foreignId('user_id');
+            $table->string('spesialis');
+            $table->decimal('harga', 8, 2);
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ class DokterController extends Controller
     public function index()
     {
         if(auth()->user()->role == 'D'){
-            $dokter = dokter::where('user_id',auth()->user()->id)->get();
+            $dokter = dokter::where('id',auth()->user()->id)->get();
 
         } else {
             $dokter = dokter::all();
@@ -35,9 +35,11 @@ class DokterController extends Controller
         $val = $request->validate([
         
             'nama' => 'required',
+            'user_id'  => 'required',
             'no_hp' => 'required',
             'spesialis' => 'required',
             'jadwal' => 'required',
+            'harga'  => 'required|numeric',
         ]);
         dokter::create($val);
         return redirect()->route('dokter.index')->with('success', $val['nama'] . ' berhasil disimpan');
@@ -67,10 +69,9 @@ public function edit(dokter $dokter)
 public function update(Request $request, dokter $dokter)
 {
     $val = $request->validate([
-        'nama' => 'required',
-        'no_hp' => 'required',
-        'spesialis' => 'required',
-        'jadwal' => 'required',
+            'user_id'  => 'required',
+            'spesialis' => 'required',
+            'harga'  => 'required|numeric',
     ]);
 
     

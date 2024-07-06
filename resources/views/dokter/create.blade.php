@@ -14,23 +14,19 @@
           <form method="POST"action="{{route('dokter.store')}}" class="forms-sample">
             @csrf
             <div class="form-group">
-              <label for="nama">Nama Dokter</label>
-              <input type="text" class="form-control" name="nama" value="{{old('nama')}}">
-              @error('nama')
+              <label for="user_id">Id Dokter</label>
+              <input type="text" class="form-control" name="user_id" value="{{old('user_id')}}">
+              @error('user_id')
               <span class="text-danger"> {{$message}} </span>
               @enderror
             </div>
             <div class="form-group">
-              <label for="no_hp">No Telephone Dokter</label>
-              <input type="text" class="form-control" name="no_hp" value="{{old('no_hp')}}">
+              <label for="spesialis">Spesialis Dokter</label>
+              <input type="text" class="form-control" name="spesialis" value="{{old('spesialis')}}">
             </div>
             <div class="form-group">
-              <label for="spesialis">Specialis Dokter</label>
-              <input type="text" class="form-control" name="spesialis" value="{{old('spesialis')}}" placeholder="specialis saraf, specialis bedah, ....">
-            </div>
-            <div class="form-group">
-              <label for="jadwal">Jadwal Dokter</label>
-              <input type="date" class="form-control" name="jadwal" value="{{old('jadwal')}}">
+              <label for="harga">Biaya 1X Cek Up</label>
+              <input type="number" class="form-control" name="harga" value="{{old('harga')}}" placeholder="harga saraf, specialis bedah, ....">
             </div>
               <button type="submit" class="btn btn-primary mr-2">Simpan</button>
               <a href="{{url('dokter')}}" class="btn btn-light">Batal</button>
