@@ -11,8 +11,8 @@
         },
        
         {
-            "src": "/assets/css/(.*)",
-            "dest": "/public/assets/css/"
+            "src": "/css/(.*)",
+            "dest": "/public/css/"
         },
         {
             "src": "/assets/fonts/(.*)",
@@ -26,17 +26,17 @@
         
        
         {
-            "src": "/assets/js/(.*)",
-            "dest": "/public/assets/js/"
+            "src": "/js/(.*)",
+            "dest": "/public/js/"
         },
         {
-            "src": "/assets/scss/(.*)",
-            "dest": "/public/assets/scss/"
+            "src": "/scss/(.*)",
+            "dest": "/public/scss/"
         },
        
         {
-            "src": "/assets/vendors/(.*)",
-            "dest": "/public/assets/vendors/"
+            "src": "/vendors/(.*)",
+            "dest": "/public/vendors/"
         },
         {
             "src": "/(.*)",
