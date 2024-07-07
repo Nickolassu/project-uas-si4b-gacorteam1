@@ -14,11 +14,15 @@
           <form method="POST"action="{{route('dokter.store')}}" class="forms-sample">
             @csrf
             <div class="form-group">
-              <label for="user_id">Id Dokter</label>
-              <input type="text" class="form-control" name="user_id" value="{{old('user_id')}}">
-              @error('user_id')
-              <span class="text-danger"> {{$message}} </span>
-              @enderror
+              <label for="user_id">Nama Dokter</label>
+              <select name="user_id"
+              class="form-control">
+                    @foreach($user as $item)
+                        <option value="{{ $item['id']}}">
+                            {{ $item['nama']}}
+                        </option>
+                    @endforeach
+              </select>
             </div>
             <div class="form-group">
               <label for="spesialis">Spesialis Dokter</label>

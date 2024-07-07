@@ -16,18 +16,13 @@
                     <div class="form-group">
                       <label for="nama_pasien">Nama Pasien</label>
                       <input type="text" class="form-control" name="nama_pasien" value="{{old('nama_pasien') ? old('nama_pasien') : $pasien['nama_pasien']}}">
+                        {{-- class="form-control">
+                              @foreach($dokter as $item)
+                                  <option value="{{ $item['id']}}">
+                                      {{ $item['nama']}}
+                                  </option>
+                              @endforeach --}}
                     </div>
-                    {{-- <div class="form-group">
-                      <label for="dokter_id">Dokter</label>
-                          <select name="dokter_id"
-                          class="form-control">
-                                @foreach($dokter as $item)
-                                    <option value="{{ $item['id']}}">
-                                        {{ $item['nama']}}
-                                    </option>
-                                @endforeach
-                          </select>
-                        </div> --}}
                     <div class="form-group">
                       <label for="kelamin">Jenis Kelamin</label>
                       <div class="form-check">
@@ -53,14 +48,13 @@
                         <input type="date" class="form-control" name="tanggal_lahir" value="{{old('tanggal_lahir') ? old('tanggal_lahir') : $pasien['tanggal_lahir']}}">
                       </div>
                       <div class="form-group">
-                        <label for="tempat_lahir">Tempat Lahir</label>
-                        <input type="text" class="form-control" name="tempat_lahir" value="{{old('tempat_lahir') ? old('tempat_lahir') : $pasien['tempat_lahir']}}">
-                      </div>    
-                      <div class="form-group">
                         <label for="alamat"> Alamat</label>
                         <input type="text" class="form-control" name="alamat" value="{{old('alamat') ? old('alamat') : $pasien['alamat']}}">
                       </div>
-                       
+                        <div class="form-group">
+                          <label for="keluhan">Keluhan Pasien</label>
+                          <input type="text" class="form-control" name="keluhan" value="{{old('keluhan') ? old('keluhan') : $pasien['keluhan']}}">
+                        </div>   
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                     <a href="{{ url('pasien')}}" class="btn btn-light">Batal</button>
                   </form>

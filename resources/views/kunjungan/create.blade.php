@@ -18,7 +18,7 @@
                       class="form-control">
                             @foreach($pasien as $item)
                                 <option value="{{ $item['id']}}">
-                                    {{ $item['nama']}}
+                                    {{ $item['nama_pasien']}}
                                 </option>
                             @endforeach
                       </select>
@@ -33,7 +33,7 @@
                         class="form-control">
                               @foreach($dokter as $item)
                                   <option value="{{ $item['id']}}">
-                                      {{ $item['nama']}}
+                                      {{ $item['spesialis']}}
                                   </option>
                               @endforeach
                         </select> 

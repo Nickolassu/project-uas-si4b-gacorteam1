@@ -13,16 +13,9 @@
                   <form method="POST"action="{{route('pasien.store')}}" class="forms-sample">
                     @csrf
                     <div class="form-group">
-                        <label for="nama">Nama Pasien</label>
-                        <input type="text" class="form-control" name="nama" value="{{old('nama')}}">
-                          {{-- class="form-control">
-                                @foreach($dokter as $item)
-                                    <option value="{{ $item['id']}}">
-                                        {{ $item['nama']}}
-                                    </option>
-                                @endforeach --}}
-                          </select>
-                        </div>
+                        <label for="nama_pasien">Nama Pasien</label>
+                        <input type="text" class="form-control" name="nama_pasien" value="{{old('nama_pasien') ? old('nama_pasien') : $pasien['nama_pasien']}}">
+                    </div>
                     <div class="form-group">
                       <label for="kelamin">Jenis Kelamin</label>
                       <div class="form-check">
@@ -40,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <label for="no_hp">NoTelepon</label>
-                        <input type="text" class="form-control" name="no_hp" value="{{old('no_hp')}}">
+                        <input type="text" class="form-control" name="no_hp" value="{{old('no_hp') ? old('no_hp') : $pasien['no_hp']}}">
                       </div>
                       <div class="form-group">
                         <label for="tanggal_lahir">Tanggal Lahir Pasien</label>
@@ -48,12 +41,12 @@
                       </div>
                       <div class="form-group">
                         <label for="alamat">Alamat </label>
-                        <input type="text" class="form-control" name="alamat" value="{{old('alamat')}}">
+                        <input type="text" class="form-control" name="alamat" value="{{old('alamat') ? old('alamat') : $pasien['alamat']}}">
                       </div>    
                       <div class="form-group">
                         <div class="form-group">
                           <label for="keluhan">Keluhan Pasien</label>
-                          <input type="text" class="form-control" name="keluhan" value="{{old('keluhan')}}">
+                          <input type="text" class="form-control" name="keluhan" value="{{old('keluhan')  ? old('keluhan') : $pasien['keluhan']}}">
                         </div>
                         
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>

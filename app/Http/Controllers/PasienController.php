@@ -19,23 +19,23 @@ class PasienController extends Controller
 
     public function create()
     {
-        $dokter = dokter::all();
-        return view('pasien.create')->with('dokter', $dokter);
+        // $dokter = dokter::all();
+        return view('pasien.create');
     }
 
     public function store(Request $request)
     {
         $val = $request->validate([
-            'nama_pasien' => 'required ',
+            'nama_pasien' => 'required',
             'kelamin'=>'required',
             'no_hp' => 'required',
             'tanggal_lahir' => 'required',
-            'tempat_lahir' => 'required',
             'alamat' => 'required',
+            'keluhan' => 'required',
             
         ]);
         pasien::create($val);
-        return redirect()->route('pasien.index')->with('success', $val['nama'] . ' berhasil disimpan');
+        return redirect()->route('pasien.index')->with('success', $val['nama_pasien'] . ' berhasil disimpan');
     }
 
 /**
@@ -52,10 +52,10 @@ class PasienController extends Controller
 public function edit(pasien $pasien)
 {
     // $pasien=pasien::all();
-    $dokter = dokter::all();
+    // $dokter = dokter::all();
     return view('pasien.edit')
-    ->with('pasien',$pasien)
-    ->with('dokter',$dokter);
+    ->with('pasien',$pasien);
+    // ->with('dokter',$dokter);
 }
 
 
@@ -65,8 +65,7 @@ public function edit(pasien $pasien)
 public function update(Request $request, pasien $pasien)
 {
     $val = $request->validate([
-        'nama' => 'required',
-        'dokter_id'=>'required',
+        'nama_pasien' => 'required',
         'kelamin' => 'required',
         'no_hp' => 'required',
         'tanggal_lahir' => 'required',
@@ -74,7 +73,7 @@ public function update(Request $request, pasien $pasien)
         'keluhan' => 'required',
     ]);
     pasien::where('id', $pasien['id'])->update($val);
-    return redirect()->route('pasien.index')->with('Success', $val['nama'] . ' berhasil disimpan');
+    return redirect()->route('pasien.index')->with('Success', $val['nama_pasien'] . ' berhasil disimpan');
 }
 
 

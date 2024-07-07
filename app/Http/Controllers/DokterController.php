@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\dokter;
 use App\Models\pasien;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DokterController extends Controller
@@ -14,7 +15,6 @@ class DokterController extends Controller
     {
         if(auth()->user()->role == 'D'){
             $dokter = dokter::where('id',auth()->user()->id)->get();
-
         } else {
             $dokter = dokter::all();
         }
@@ -24,7 +24,8 @@ class DokterController extends Controller
 
     public function create()
     {
-        return view('dokter.create');
+        $user = User::all();
+        return view('dokter.create' , compact('user'));
     }
 
     public function store(Request $request)
@@ -33,14 +34,12 @@ class DokterController extends Controller
             abort(403);
         }
         $val = $request->validate([
-        
-            'nama' => 'required',
             'user_id'  => 'required',
             'spesialis' => 'required',
             'harga'  => 'required|numeric',
         ]);
         dokter::create($val);
-        return redirect()->route('dokter.index')->with('success', $val['nama'] . ' berhasil disimpan');
+        return redirect()->route('dokter.index')->with('success', $val['user_id'] . ' berhasil disimpan');
     }
     
 /**
@@ -74,7 +73,7 @@ public function update(Request $request, dokter $dokter)
 
     
     dokter::where('id', $dokter['id'])->update($val);
-    return redirect()->route('dokter.index')->with('Success', $val['nama'] . ' berhasil disimpan');
+    return redirect()->route('dokter.index')->with('Success', $val['user_id'] . ' berhasil disimpan');
 }
 
 

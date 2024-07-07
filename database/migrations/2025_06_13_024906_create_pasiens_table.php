@@ -18,8 +18,8 @@ return new class extends Migration
                 $table->enum('kelamin', ['Laki-laki', 'Perempuan']);
                 $table->string('no_hp');
                 $table->date('tanggal_lahir');
-                $table->string('tempat_lahir');
                 $table->string('alamat');
+                $table->string('keluhan');
                 $table->timestamps();
             });
     }

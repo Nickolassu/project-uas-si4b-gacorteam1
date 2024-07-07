@@ -24,18 +24,18 @@
                           <th>Tanggal Lahir</th>
                           <th>Alamat</th>
                           <th>Keluhan</th>
-                          <th>Tempat Lahir</th>
+                          <th>Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
                         @foreach ($pasien as $item)
                         <tr>
                             <td>{{$item["nama_pasien"]}}</td>
-                            <td>{{$item["kelamin"]["nama"]}}</td>
+                            <td>{{$item["kelamin"]}}</td>
                             <td>{{$item["no_hp"]}}</td>
                             <td>{{$item["tanggal_lahir"]}}</td>
-                            <td>{{$item["tempat_lahir"]}}</td>
                             <td>{{$item["alamat"]}}</td>
+                            <td>{{$item["keluhan"]}}</td>
                             <td>
                               @can('delete',$item)
                               <form action="{{ route('pasien.destroy', $item["id"]) }}" method="post" style="display: inline">
