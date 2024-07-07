@@ -50,8 +50,8 @@
                         </select>
                       </div>
                       <div class="form-group">
-                        <label for="harga">Harga</label>
-                        <input type="number" class="form-control" name="harga" value="{{old('harga')}}">
+                        <label for="jumlah">Jumlah Obat</label>
+                        <input type="number" class="form-control" name="jumlah" value="{{old('jumlah')}}">
                       </div>
                       <div class="form-group">
                         <label for="diagnosa">Diagnosa</label>

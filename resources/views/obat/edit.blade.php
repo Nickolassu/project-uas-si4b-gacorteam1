@@ -29,6 +29,10 @@
                         <label for="dosis">Dosis Obat</label>
                         <input type="text" class="form-control" name="dosis" value="{{old('dosis') ? old('dosis') : $obat['dosis']}}">
                       </div>
+                      <div class="form-group">
+                        <label for="harga">Harga</label>
+                        <input type="number" class="form-control" name="harga" value="{{old('harga')}}">
+                      </div>
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                     <a href="{{ url('obat')}}" class="btn btn-light">Batal</button>
                   </form>

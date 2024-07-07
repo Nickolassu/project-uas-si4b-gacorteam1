@@ -34,7 +34,7 @@ class KunjunganController extends Controller
             'tanggal_kunjungan' => 'required|date',
             'dokter_id' => 'required',
             'obat_id' => 'required',
-            'harga' => 'required|numeric',
+            'jumlah' => 'required',
             'diagnosa' => 'required',
             'no_urut' => 'required|integer',
         ]);
@@ -71,7 +71,7 @@ public function update(Request $request, kunjungan $kunjungan)
         'tanggal_kunjungan' => 'required|date',
         'dokter_id' => 'required',
         'obat_id' => 'required',
-        'harga' => 'required|numeric',
+        'jumlah' => 'required',
         'diagnosa' => 'required',
         'no_urut' => 'required|integer',
     ]);

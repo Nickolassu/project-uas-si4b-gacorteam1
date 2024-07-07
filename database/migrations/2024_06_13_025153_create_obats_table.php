@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_obat');
             $table->text('deskripsi');
             $table->integer('stok');
+            $table->decimal('harga', 8, 2);
             $table->string('dosis');
             $table->timestamps();
         });

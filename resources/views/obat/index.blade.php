@@ -22,6 +22,7 @@
                           <th>Deskripsi</th>
                           <th>Stok</th>
                           <th>Dosis</th>
+                          <th>Harga</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -31,6 +32,7 @@
                             <td>{{$item["deskripsi"]}}</td>
                             <td>{{$item["stok"]}}</td>
                             <td>{{$item["dosis"]}}</td>
+                            <td>{{$item["harga"]}}</td>
                             <td>
                               @can('delete',$item)
                               <form action="{{ route('obat.destroy', $item["id"]) }}" method="post" style="display: inline">

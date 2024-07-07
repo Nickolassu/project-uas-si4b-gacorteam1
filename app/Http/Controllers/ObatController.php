@@ -26,6 +26,7 @@ class ObatController extends Controller
             'deskripsi' => 'required',
             'stok' => 'required|integer',
             'dosis' => 'required',
+            'harga'=> 'required',
         ]);
         obat::create($val);
         return redirect()->route('obat.index')->with('success', $val['nama_obat'] . ' berhasil disimpan');
@@ -58,6 +59,7 @@ public function update(Request $request, obat $obat)
         'deskripsi' => 'required',
         'stok' => 'required|integer',
         'dosis' => 'required',
+        'harga'=> 'required|numeric',
     ]);
     obat::where('id', $obat['id'])->update($val);
     

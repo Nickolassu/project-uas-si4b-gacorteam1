@@ -22,7 +22,7 @@
                           <th>Tanggal Kunjungan</th>
                           <th>Dokter</th>
                           <th>Obat</th>
-                          <th>Harga</th>
+                          <th>jumlah obat</th>
                           <th>diagnosa</th>
                           <th>No Urut</th>
                         </tr>
@@ -34,7 +34,7 @@
                             <td>{{$item["tanggal_kunjungan"]}}</td>
                             <td>{{$item["dokter"]["nama"]}}</td>
                             <td>{{$item["obat"]["nama_obat"]}}</td>
-                            <td>{{$item["harga"]}}</td>
+                            <td>{{$item["jumlah"]}}</td>
                             <td>{{$item["diagnosa"]}}</td>
                             <td>{{$item["no_urut"]}}</td>
                             <td>

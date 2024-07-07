@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('tanggal_kunjungan');
             $table->foreignId('dokter_id')->constrained();
             $table->foreignId('obat_id')->constrained();
-            $table->decimal('harga', 8, 2);
+            $table->interger('jumlah');
             $table->integer('no_urut');
             $table->text('diagnosa');
             $table->timestamps();

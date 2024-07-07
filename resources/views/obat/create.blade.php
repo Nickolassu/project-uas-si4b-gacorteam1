@@ -27,6 +27,10 @@
                       <div class="form-group">
                         <label for="dosis">Dosis Obat</label>
                         <input type="text" class="form-control" name="dosis" value="{{old('dosis')}}">
+                        <div class="form-group">
+                          <label for="harga">Harga</label>
+                          <input type="number" class="form-control" name="harga" value="{{old('harga')}}">
+                        </div>
                       </div>
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                     <a href="{{ url('dokter')}}" class="btn btn-light">Batal</button>
