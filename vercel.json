@@ -9,10 +9,7 @@
             "src": "/build/(.*)",
             "dest": "/public/build/"
         },
-        {
-            "src": "/css/(.*)",
-            "dest": "/public/css/"
-        },
+       
         {
             "src": "/assets/css/(.*)",
             "dest": "/public/assets/css/"
@@ -30,10 +27,7 @@
             "dest": "/public/assets/images/"
         },
         
-        {
-            "src": "/js/(.*)",
-            "dest": "/public/js/"
-        },
+       
         {
             "src": "/assets/js/(.*)",
             "dest": "/public/assets/js/"
