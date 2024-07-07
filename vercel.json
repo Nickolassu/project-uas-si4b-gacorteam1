@@ -18,10 +18,7 @@
             "src": "/assets/fonts/(.*)",
             "dest": "/public/assets/fonts/"
         },
-        {
-            "src": "/images/(.*)",
-            "dest": "/public/images/"
-        },
+       
         {
             "src": "/assets/images/(.*)",
             "dest": "/public/assets/images/"
@@ -36,10 +33,7 @@
             "src": "/assets/scss/(.*)",
             "dest": "/public/assets/scss/"
         },
-        {
-            "src": "/vendors/(.*)",
-            "dest": "/public/vendors/"
-        },
+       
         {
             "src": "/assets/vendors/(.*)",
             "dest": "/public/assets/vendors/"
